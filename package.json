@@ -1,0 +1,23 @@
+{
+  "name": "asian-chat",
+  "version": "1.0.0",
+  "description": "A simple ws based chat",
+  "main": "main.js",
+  "scripts": {
+    "test": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AwesomeCatClub/asian-chat.git"
+  },
+  "keywords": [
+    "ws",
+    "chat"
+  ],
+  "author": "AwesomeCatClub",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AwesomeCatClub/asian-chat/issues"
+  },
+  "homepage": "https://github.com/AwesomeCatClub/asian-chat#readme"
+}
