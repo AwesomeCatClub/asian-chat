@@ -28,6 +28,7 @@ var info = {
 info.message = "{0} version {1}, Made by AwesomeCatClub. the source code is available at {2}".format(info.name, info.version, info.repo);
 
 // define max messages stored
+// needs to also be set in www/index.html
 const MSG_MAX = 50;
 
 // log that it finished loading
@@ -42,3 +43,15 @@ function clearMsg() {
 // we run it to get our array
 clearMsg();
 
+console.log(Date()+' blank screen generated');
+
+// make a server
+app.use(express.static("www"))
+console.log(Date()+' started server');
+
+// listen to the sockets
+io.on("connection", socket => {
+	// send newly connected users the entire conversation
+	socket.emit("msgArray", msgArray)
+	
+})
