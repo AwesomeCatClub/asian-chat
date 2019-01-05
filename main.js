@@ -23,9 +23,9 @@ var info = {
 	"name": "asian-chat",
 	"version": "v1.0",
 	"repo": "https://github.com/AwesomeCatClub/asian-chat",
-	"paste": "",
+	"message": "",
 }
-info.paste = "{0} version {1}, Made by AwesomeCatClub. the source code is available at {2}".format(info.name, info.version, info.repo);
+info.message = "{0} version {1}, Made by AwesomeCatClub. the source code is available at {2}".format(info.name, info.version, info.repo);
 
 // define max messages stored
 const MSG_MAX = 50;
@@ -33,6 +33,11 @@ const MSG_MAX = 50;
 // log that it finished loading
 console.log(Date()+' loaded');
 
+// a function to clear all the messages
 function clearMsg() {
 	msgArray = [ ];
-	msgArray[0] = ""
+	msgArray[0] = info.message;
+}
+
+// we run it to get our array
+clearMsg();
