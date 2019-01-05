@@ -41,3 +41,4 @@ function clearMsg() {
 
 // we run it to get our array
 clearMsg();
+
