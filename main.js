@@ -28,7 +28,15 @@ console.log(Date()+' loaded');
 // a function to clear all the messages
 function clearMsg() {
 	msgArray = [ ];
-	for (var mP = 0; mP <  
+	
+	// add empty lines
+	for (var line = 0; line < settings.MAX_MSG; line++) {
+		msgArray[line] = "";
+	}
+	
+	// put in the MOTDs
+	msgArray[settings.MAX_MSG - 2] = MOTD1;
+	msgArray[settings.MAX_MSG - 1] = settings.MOTD2;
 }
 
 // we run it to get our array
