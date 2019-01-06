@@ -23,10 +23,11 @@ if (!String.prototype.format) {
 MOTD1 = "{0} version {1}, Made by AwesomeCatClub. the source code is available at {2}".format(package.name, package.version, package.homepage);
 
 // process a message
+// the regex is to filter out all html/javascript
 function prcMsg(data, skt) {
 	skt.emit("msgTX", {
 		user: data.user,
-		msg: data.msg,
+		msg: data.msg.replace(/(<([^>]+)>)/g, ""),
 	})
 }
 

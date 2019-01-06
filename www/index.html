@@ -1,39 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        #msgDisplay {
-            border: 1px solid black;
-            table-layout: fixed;
-        }
-        
-        td.unDis {
-            border-right: 1px solid black;
-            height: 1em;
-            width: 10em;
-        }
-        
-        td.mgDis {
-            height: 1em;
-            width: 35em;
-        }
-        
-        #sendBox {
-            width: 50em;
-        }
-        
-        #sendButton {
-            width: 4em;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="/socket.io/socket.io.js"></script>
 </head>
 
 <body>
     <h1>asian-chat</h1>
     <p>a simple ws based chat</p>
+
     <!-- the table will be genorated by Javascript :3 -->
     <table id="msgDisplay"></table>
+
     <div id="sendDiv">
         <input id="sendBox" placeholder="Some text..">
         <button id="sendButton" onclick="javascript:sendMsg()">Send</button>
@@ -47,8 +25,14 @@
             });
         </script>
     </div>
+
+    <div id="loginBox">
+        <input id="loginUsername" placeholder="Username">
+        <button onClick="loginButton">Login</button>
+    </div>
+    
     <script>
-	    // create the table to display things
+        // create the table to display things
         var x = document.getElementById("msgDisplay");
         for (var i = 0; i < 50; i++) {
             var y = document.createElement("TR");
@@ -65,6 +49,7 @@
             document.getElementById("tr-" + i).appendChild(z);
         }
     </script>
+
     <script>
         // login to the server
         
