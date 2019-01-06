@@ -1,66 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-#msgDisplay {
-  border: 1px solid black;
-  table-layout: fixed;
-}
-td.unDis {
-  border-right: 1px solid black;
-  height: 1em; 
-  width: 10em;
-}
-td.mgDis {
-  height: 1em;
-  width: 35em;
-}
-#sendBox {
-  width: 50em;
-}
-#sendButton {
-  width: 4em;
-}
-</style>
+    <style>
+        #msgDisplay {
+            border: 1px solid black;
+            table-layout: fixed;
+        }
+        
+        td.unDis {
+            border-right: 1px solid black;
+            height: 1em;
+            width: 10em;
+        }
+        
+        td.mgDis {
+            height: 1em;
+            width: 35em;
+        }
+        
+        #sendBox {
+            width: 50em;
+        }
+        
+        #sendButton {
+            width: 4em;
+        }
+    </style>
 </head>
+
 <body>
+    <h1>asian-chat</h1>
+    <p>a simple ws based chat</p>
+    <table id="msgDisplay"></table>
+    <div id="sendDiv">
+        <input id="sendBox" placeholder="Some text..">
+        <button id="sendButton" onclick="javascript:sendMsg()">Send</button>
+        <script>
+            var input = document.getElementById("sendBox");
+            input.addEventListener("keyup", function(event) {
+                event.preventDefault();
+                if (event.keyCode === 13) {
+                    document.getElementById("sendButton").click();
+                }
+            });
+        </script>
+    </div>
+    <script>
+	    // create the table to display things
+        var x = document.getElementById("msgDisplay");
+        for (var i = 0; i < 50; i++) {
+            var y = document.createElement("TR");
+            y.setAttribute("id", "tr-" + i);
+            x.appendChild(y);
 
-<h1>asian-chat</h1>
-<p>a simple ws based chat</p>
-
-<table id="msgDisplay">
-</table>
-<div id="sendDiv">
-<input id="sendBox" placeholder="Some text..">
-<button id="sendButton" onclick="javascript:alert('you sent a message')">Send</button>
-
-<script>
-var input = document.getElementById("sendBox");
-input.addEventListener("keyup", function(event) {
-  event.preventDefault();
-  if (event.keyCode === 13) {
-    document.getElementById("sendButton").click();
-  }
-});
-</script>
-</div>
-<script>
-  var x = document.getElementById("msgDisplay");
-  for (var i = 0; i < 50; i++) {
-    var y = document.createElement("TR");
-    y.setAttribute("id", "tr-"+i);
-    x.appendChild(y);
-    
-    var z = document.createElement("TD");
-    z.setAttribute("id", "unDis"+i);
-    z.setAttribute("class", "unDis");
-    document.getElementById("tr-"+i).appendChild(z);
-    var z = document.createElement("TD");
-    z.setAttribute("id", "mgDis"+i);
-    z.setAttribute("class", "mgDis");
-    document.getElementById("tr-"+i).appendChild(z);
-  }
-</script>
-
+            var z = document.createElement("TD");
+            z.setAttribute("id", "unDis" + i);
+            z.setAttribute("class", "unDis");
+            document.getElementById("tr-" + i).appendChild(z);
+            var z = document.createElement("TD");
+            z.setAttribute("id", "mgDis" + i);
+            z.setAttribute("class", "mgDis");
+            document.getElementById("tr-" + i).appendChild(z);
+        }
+    </script>
 </body>
 </html>
