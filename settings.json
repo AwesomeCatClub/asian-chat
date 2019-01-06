@@ -1,4 +1,5 @@
 {
-	"MOTD2": "This is the message of the day.",
-	"MAX_MSG": 50,
+	MOTD2: "This is the message of the day.",
+	MAX_MSG: 50,
+	PARSE_OUT_HTML: 1,
 }
