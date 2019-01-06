@@ -1,6 +1,7 @@
 #msgDisplay {
     border: 1px solid black;
     table-layout: fixed;
+    overflow: hidden;
 }
 td.unDis {
     border-right: 1px solid black;
@@ -20,7 +21,8 @@ td.mgDis {
 #loginBox {
     border: 1px solid black;
     background-color: white;
-    position: absolute;
+    padding: 25px;
+    position: fixed;
     top: 40%;
     left: 40%;
 }
