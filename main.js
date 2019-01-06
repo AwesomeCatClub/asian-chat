@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
+const package = require('./package.json')
+const settings = require('./settings.json')
 
 // add .format() implimentation to Javascript
 // credit to fearphage for fix
@@ -18,18 +20,7 @@ if (!String.prototype.format) {
   };
 }
 
-// some info
-var info = {
-	"name": "asian-chat",
-	"version": "v1.0",
-	"repo": "https://github.com/AwesomeCatClub/asian-chat",
-	"message": "",
-}
-info.message = "{0} version {1}, Made by AwesomeCatClub. the source code is available at {2}".format(info.name, info.version, info.repo);
-
-// define max messages stored
-// needs to also be set in www/index.html
-const MSG_MAX = 50;
+MOTD1 = "{0} version {1}, Made by AwesomeCatClub. the source code is available at {2}".format(package.name, package.version, package.homepage);
 
 // log that it finished loading
 console.log(Date()+' loaded');
@@ -37,7 +28,7 @@ console.log(Date()+' loaded');
 // a function to clear all the messages
 function clearMsg() {
 	msgArray = [ ];
-	msgArray[0] = info.message;
+	for (var mP = 0; mP <  
 }
 
 // we run it to get our array
