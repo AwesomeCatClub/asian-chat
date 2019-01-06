@@ -26,11 +26,13 @@
             width: 4em;
         }
     </style>
+    <script src="/socket.io/socket.io.js"></script>
 </head>
 
 <body>
     <h1>asian-chat</h1>
     <p>a simple ws based chat</p>
+    <!-- the table will be genorated by Javascript :3 -->
     <table id="msgDisplay"></table>
     <div id="sendDiv">
         <input id="sendBox" placeholder="Some text..">
@@ -62,6 +64,12 @@
             z.setAttribute("class", "mgDis");
             document.getElementById("tr-" + i).appendChild(z);
         }
+    </script>
+    <script>
+        // login to the server
+        
+        // when you click the send button
+        
     </script>
 </body>
 </html>

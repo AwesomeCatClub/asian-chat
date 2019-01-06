@@ -44,9 +44,9 @@ function clearMsg() {
 	}
 	
 	// put in the MOTDs
-	unmArray[settings.MAX_MSG - 2] = "MOTD";
+	unmArray[settings.MAX_MSG - 2] = "SERVER";
 	msgArray[settings.MAX_MSG - 2] = MOTD1;
-	unmArray[settings.MAX_MSG - 1] = "MOTD";
+	unmArray[settings.MAX_MSG - 1] = "SERVER";
 	msgArray[settings.MAX_MSG - 1] = settings.MOTD2;
 }
 
@@ -68,7 +68,13 @@ io.on("connection", socket => {
 			msgArray: msgArray,
 			unmArray: unmArray
 		})
-		
+		// make a 'join' message
+		prcMsg({
+				user: "SERVER",
+				msg: "user {0} has joined the chat.".format(data.user),
+			},
+			socket
+		);
 	})
 	socket.on("msgRX", data => {
 		prcMsg(data, socket)
