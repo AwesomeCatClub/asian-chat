@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Web socket Experiment</title>
+    <script type="text/javascript">
+        function callWebSocket() {
+
+            var socket = new WebSocket("ws://www.google.com");
+
+            socket.onopen = function () {
+                alert("Hello, Connected To WS server");
+            };
+
+            socket.onmessage = function (e) {
+                alert("The message received is : " + e.data);
+            };
+            socket.onerror = function (e) {
+                alert("An error occured while connecting... " + e.data);
+            };
+            socket.onclose = function () {
+                alert("hello.. The coonection has been clsoed");
+            };
+
+        }
+    </script>
+
+
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="/socket.io/socket.io.js"></script>
     <script src="http://cdn.layerjs.org/libs/layerjs/layerjs-0.5.2.min.js"></script>
@@ -8,6 +32,8 @@
 </head>
 
 <body>
+    
+    <input type="button" value="Open Connecton" onclcik="callWebSocket()" />
     <h1>asian-chat</h1>
     <p>a simple ws based chat</p>
 
