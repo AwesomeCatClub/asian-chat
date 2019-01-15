@@ -4,7 +4,7 @@
   "description": "A simple ws based chat",
   "main": "main.js",
   "scripts": {
-    "test": "node main.js"
+    "start": "node main.js"
   },
   "repository": {
     "type": "git",
