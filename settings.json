@@ -1,6 +1,6 @@
 {
 	MOTD2: "This is the message of the day.",
-	PORT: 85458,
+	PORT: 35458,
 	MAX_MSG: 50,
 	PARSE_OUT_HTML: 1,
 }
